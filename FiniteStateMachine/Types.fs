@@ -8,6 +8,7 @@ type FsmEvent =
     | APP_TIMEOUT
     | ARCV_SYN
     | RCV_ACK
+    | RCV_SYN
     | RCV_SYN_ACK
     | RCV_FIN
     | RCV_FIN_ACK
@@ -28,6 +29,7 @@ type FsmEvent =
 
 type FsmState =
     | CLOSED
+    | LISTEN
     | SYN_SENT
     | SYN_RCVD
     | ESTABLISHED
