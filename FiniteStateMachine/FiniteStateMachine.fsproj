@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <Compile Include="Types.fs" />
+    <Compile Include="InputValidator.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 

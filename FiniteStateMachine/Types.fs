@@ -12,7 +12,7 @@ type FsmEvent =
     | RCV_FIN
     | RCV_FIN_ACK
         
-    static member fromString str =
+    static member FromString str =
         match str with
         | "APP_PASSIVE_OPEN" -> Ok APP_PASSIVE_OPEN
         | "APP_ACTIVE_OPEN" -> Ok APP_ACTIVE_OPEN
