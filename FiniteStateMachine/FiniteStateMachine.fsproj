@@ -7,9 +7,10 @@
 
   <ItemGroup>
     <Compile Include="Types.fs" />
-	  <Compile Include="Domain.fs" />
-	  <Compile Include="InputValidator.fs" />
-    <Compile Include="Program.fs" />
+	<Compile Include="Domain.fs" />
+	<Compile Include="Mapper.fs" />
+	<Compile Include="InputValidator.fs" />
+	<Compile Include="Program.fs" />
   </ItemGroup>
 
 </Project>
