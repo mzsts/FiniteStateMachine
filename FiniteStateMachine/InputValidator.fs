@@ -14,6 +14,6 @@ module InputValidator =
             .Replace("[", "")
             .Replace("]", "")
 
-    let ValidateInput input = 
+    let ValidateInput (input: string): Result<string, string> = 
         validateRawInput input
         |> Result.bind (fun x -> x |> repairInput |> Ok)

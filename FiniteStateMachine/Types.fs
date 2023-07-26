@@ -1,6 +1,6 @@
 ﻿namespace FiniteStateMachine
 
-type FsmEvent =
+type Event =
     | APP_PASSIVE_OPEN
     | APP_ACTIVE_OPEN
     | APP_SEND
@@ -8,10 +8,10 @@ type FsmEvent =
     | APP_TIMEOUT
     | ARCV_SYN
     | RCV_ACK
+    | RCV_SYN
     | RCV_SYN_ACK
     | RCV_FIN
     | RCV_FIN_ACK
-        
     static member FromString str =
         match str with
         | "APP_PASSIVE_OPEN" -> Ok APP_PASSIVE_OPEN
@@ -26,8 +26,9 @@ type FsmEvent =
         | "RCV_FIN_ACK" -> Ok RCV_FIN_ACK
         | _ -> Error @$"Invalid input. Can not match event '{str}'"
 
-type FsmState =
+type State =
     | CLOSED
+    | LISTEN
     | SYN_SENT
     | SYN_RCVD
     | ESTABLISHED
