@@ -1,9 +1,9 @@
 ﻿namespace FiniteStateMachine
 
-module Fsm =
-    let private initialState: FsmState = CLOSED
+module Domain =
+    let InitialState: State = CLOSED
 
-    let getNextState (state: FsmState) (event: FsmEvent) =
+    let private getNextState (state: State) (event: Event) =
         match (state, event) with
         | CLOSED, APP_PASSIVE_OPEN -> Ok LISTEN
         | CLOSED, APP_ACTIVE_OPEN -> Ok SYN_SENT
@@ -25,15 +25,15 @@ module Fsm =
         | TIME_WAIT, APP_TIMEOUT -> Ok CLOSED
         | CLOSE_WAIT, APP_CLOSE -> Ok LAST_ACK
         | LAST_ACK, RCV_ACK -> Ok CLOSED
-        | _ -> Error "Error"
+        | _ -> Error "ERROR"
 
-    let rec private calculateState (state: FsmState) (events: FsmEvent list) =
+    let rec private calculateState (state: State) (events: Event list) =
         match events with
         | x::xs -> getNextState state x |> Result.bind (fun s -> calculateState s xs)
         | [] -> Ok state
 
-    let CalculateFinalState (events: FsmEvent list): Result<FsmState, string> =
+    let CalculateFinalState (events: Event list): Result<State, string> =
         match events with
-        | [] -> Ok initialState
-        | _ -> calculateState initialState events
+        | [] -> Ok InitialState
+        | _ -> calculateState InitialState events
 
