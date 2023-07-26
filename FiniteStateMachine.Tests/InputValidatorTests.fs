@@ -1,6 +1,7 @@
 ﻿namespace FiniteStateMachine.Tests
 
 module InputValidatorTests =
+
     open System
     open Xunit
     open FiniteStateMachine
@@ -16,11 +17,9 @@ module InputValidatorTests =
         
         // ASSERT
         match actualResult with
-        | Error errorValue ->
-            Assert.Same(expected, errorValue)
-        | Ok _ ->
-            let error = "Expected Error but was Ok"
-            printfn "%s" error
+        | Error errorValue -> Assert.Same(expected, errorValue)
+        | Ok resultValue ->
+            let error = $"Expected Error but was Ok ({resultValue})"
             Assert.True(false, error)
 
     [<Fact>]
@@ -34,11 +33,9 @@ module InputValidatorTests =
         
         // ASSERT
         match actualResult with
-        | Ok resultValue ->
-            Assert.Same(expected, resultValue)
-        | Error _ ->
-            let error = "Expected Ok but was Error"
-            printfn "%s" error
+        | Ok resultValue -> Assert.Same(expected, resultValue)
+        | Error errorValue ->
+            let error = $"Expected Ok but was Error ({errorValue})."
             Assert.True(false, error)
 
     [<Fact>]
@@ -52,11 +49,9 @@ module InputValidatorTests =
         
         // ASSERT
         match actualResult with
-        | Ok resultValue ->
-            Assert.Same(expected, resultValue)
-        | Error _ ->
-            let error = "Expected Ok but was Error"
-            printfn "%s" error
+        | Ok resultValue -> Assert.Same(expected, resultValue)
+        | Error errorValue ->
+            let error = $"Expected Ok but was Error ({errorValue})."
             Assert.True(false, error)
 
     [<Fact>]
@@ -75,9 +70,7 @@ module InputValidatorTests =
         
         // ASSERT
         match actualResult with
-        | Ok resultValue ->
-            Assert.Same(expected, resultValue)
-        | Error _ ->
-            let error = "Expected Ok but was Error"
-            printfn "%s" error
+        | Ok resultValue -> Assert.Equal(expected, resultValue)
+        | Error errorValue ->
+            let error = $"Expected Ok but was Error ({errorValue})."
             Assert.True(false, error)
