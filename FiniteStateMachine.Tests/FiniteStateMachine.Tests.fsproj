@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="DomainTests.fs" />
     <Compile Include="MapperTests.fs" />
     <Compile Include="InputValidatorTests.fs" />
     <Compile Include="Program.fs" />
