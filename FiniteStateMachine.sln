@@ -5,6 +5,8 @@ VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FiniteStateMachine", "FiniteStateMachine\FiniteStateMachine.fsproj", "{3DE97C64-4568-4CBC-BCA2-38ECC63B40B8}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FiniteStateMachine.Tests", "FiniteStateMachine.Tests\FiniteStateMachine.Tests.fsproj", "{78374164-253B-4395-871D-E8BF68AE9100}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{3DE97C64-4568-4CBC-BCA2-38ECC63B40B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3DE97C64-4568-4CBC-BCA2-38ECC63B40B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3DE97C64-4568-4CBC-BCA2-38ECC63B40B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78374164-253B-4395-871D-E8BF68AE9100}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78374164-253B-4395-871D-E8BF68AE9100}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78374164-253B-4395-871D-E8BF68AE9100}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78374164-253B-4395-871D-E8BF68AE9100}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
